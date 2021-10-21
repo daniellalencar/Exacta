@@ -11,8 +11,8 @@ public class Solution1 {
 
   private int getMinorValueIsNotInList(int[] values, int minorValueInList) {
     int minorValue = minorValueInList;
-    final boolean contains = contains(values, minorValue);
-    if (contains) {
+    final boolean isValueInList = isValueInList(values, minorValue);
+    if (isValueInList) {
       minorValue = minorValueInList + 1;
       return getMinorValueIsNotInList(values, minorValue);
     } else {
@@ -20,7 +20,7 @@ public class Solution1 {
     }
   }
 
-  public static boolean contains(final int[] arr, final int value) {
+  public static boolean isValueInList(final int[] arr, final int value) {
     return Arrays.stream(arr).anyMatch(i -> i == value);
   }
 
