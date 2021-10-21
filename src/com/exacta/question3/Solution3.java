@@ -2,18 +2,18 @@ package com.exacta.question3;
 
 public class Solution3 {
   public double calcPM(int m, double p) {
-    return myPow(p, m);
+    return calculaPotencia(p, m);
   }
 
-  public double myPow(double valor, int elevacao) {
+  public double calculaPotencia(double valor, int elevacao) {
 
     if (elevacao < 0) {
       if (elevacao == Integer.MIN_VALUE) {
         elevacao = (elevacao + 1) * (-1);
-        return 1.0 / (myPow(valor * valor, elevacao));
+        return 1.0 / (calculaPotencia(valor * valor, elevacao));
       }
       elevacao = elevacao * (-1);
-      return (double) 1.0 / myPow(valor, elevacao);
+      return (double) 1.0 / calculaPotencia(valor, elevacao);
     }
     double y = 1;
     while (elevacao > 0) {
