@@ -21,13 +21,7 @@ public class Solution1 {
   }
 
   public static boolean contains(final int[] arr, final int value) {
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == value) {
-        return true;
-      }
-    }
-
-    return false;
+    return Arrays.stream(arr).anyMatch(i -> i == value);
   }
 
   private int getMinorValueInList(int[] a) {
